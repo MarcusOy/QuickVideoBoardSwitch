@@ -39,6 +39,7 @@
             this.saveSceneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.importFootageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.switchOutputDisplayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.stopButton = new System.Windows.Forms.Button();
@@ -65,7 +67,6 @@
             this.loopsListView = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -125,6 +126,7 @@
             this.saveSceneToolStripMenuItem,
             this.toolStripSeparator1,
             this.importFootageToolStripMenuItem,
+            this.switchOutputDisplayToolStripMenuItem,
             this.toolStripSeparator2,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -134,36 +136,43 @@
             // openSceneToolStripMenuItem
             // 
             this.openSceneToolStripMenuItem.Name = "openSceneToolStripMenuItem";
-            this.openSceneToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
+            this.openSceneToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
             this.openSceneToolStripMenuItem.Text = "Open Scene";
             // 
             // saveSceneToolStripMenuItem
             // 
             this.saveSceneToolStripMenuItem.Name = "saveSceneToolStripMenuItem";
-            this.saveSceneToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
+            this.saveSceneToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
             this.saveSceneToolStripMenuItem.Text = "Save Scene";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(185, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(227, 6);
             // 
             // importFootageToolStripMenuItem
             // 
             this.importFootageToolStripMenuItem.Name = "importFootageToolStripMenuItem";
-            this.importFootageToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
+            this.importFootageToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
             this.importFootageToolStripMenuItem.Text = "Import Footage";
             this.importFootageToolStripMenuItem.Click += new System.EventHandler(this.importFootageToolStripMenuItem_Click);
+            // 
+            // switchOutputDisplayToolStripMenuItem
+            // 
+            this.switchOutputDisplayToolStripMenuItem.Name = "switchOutputDisplayToolStripMenuItem";
+            this.switchOutputDisplayToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.switchOutputDisplayToolStripMenuItem.Text = "Switch Output Display";
+            this.switchOutputDisplayToolStripMenuItem.Click += new System.EventHandler(this.switchOutputDisplayToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(185, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(227, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -251,6 +260,15 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Now Playing:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 103);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(308, 20);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Displaying Graphics layers on Display 2";
             // 
             // panel1
             // 
@@ -386,15 +404,6 @@
             this.columnHeader4.Text = "Is Playing?";
             this.columnHeader4.Width = 87;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 103);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(308, 20);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Displaying Graphics layers on Display 2";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -467,6 +476,7 @@
         private System.Windows.Forms.ListView loopsListView;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ToolStripMenuItem switchOutputDisplayToolStripMenuItem;
     }
 }
 

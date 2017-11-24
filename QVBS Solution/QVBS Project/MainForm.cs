@@ -12,11 +12,11 @@ namespace QVBS_Project
 {
     public partial class MainForm : Form
     {
-        Form importForm;
+        Screen currentScreen;
         public MainForm()
         {
             InitializeComponent();
-            importForm = new ImportFootage(this);
+
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -26,6 +26,7 @@ namespace QVBS_Project
 
         private void importFootageToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Form importForm = new ImportFootage(this);
             importForm.Show();
         }
 
@@ -48,6 +49,12 @@ namespace QVBS_Project
             ListViewItem newRow = new ListViewItem(new[] { clip.Name, "" });
             newRow.Tag = clip;
             loopsListView.Items.Add(newRow);
+        }
+
+        private void switchOutputDisplayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeDisplay newForm = new ChangeDisplay(this);
+            newForm.Show();
         }
     }
 
