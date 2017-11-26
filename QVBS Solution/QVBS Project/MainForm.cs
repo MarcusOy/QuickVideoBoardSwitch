@@ -16,6 +16,7 @@ namespace QVBS_Project
         public MainForm()
         {
             InitializeComponent();
+            refreshOutputLocation(Screen.AllScreens[1]);
 
         }
 
@@ -28,6 +29,12 @@ namespace QVBS_Project
         {
             Form importForm = new ImportFootage(this);
             importForm.Show();
+        }
+
+        private void switchOutputDisplayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeDisplay newForm = new ChangeDisplay(this);
+            newForm.Show();
         }
 
         public void addToEvents(Clip clip)
@@ -51,11 +58,20 @@ namespace QVBS_Project
             loopsListView.Items.Add(newRow);
         }
 
-        private void switchOutputDisplayToolStripMenuItem_Click(object sender, EventArgs e)
+        public void refreshOutputLocation(Screen screen)
         {
-            ChangeDisplay newForm = new ChangeDisplay(this);
+            this.currentScreen = screen;
+            currentScreenLabel.Text = "Displaying Graphics layers on" + screen.DeviceName;
+        }
+
+        private void playButton_Click(object sender, EventArgs e)
+        {
+            Form newForm = new OutputForm();
+            newForm.Location = new Point(currentScreen.Bounds.X, currentScreen.Bounds.Y);
+            newForm.Size = new Size(currentScreen.Bounds.Width, currentScreen.Bounds.Height);
             newForm.Show();
         }
+
     }
 
 

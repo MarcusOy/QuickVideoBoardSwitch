@@ -42,5 +42,15 @@ namespace QVBS_Project
                 workingAreaTextBox.Text = temp.Screen.WorkingArea.ToString();
             }
         }
+
+        private void openButton_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex >= 0)
+            {
+                ScreenDetails temp = (ScreenDetails)listBox1.Items[listBox1.SelectedIndex];
+                mainForm.refreshOutputLocation(temp.Screen);
+                this.Close();
+            }
+        }
     }
 }
