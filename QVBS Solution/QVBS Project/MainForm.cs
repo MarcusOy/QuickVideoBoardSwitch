@@ -23,7 +23,16 @@ namespace QVBS_Project
         public MainForm()
         {
             InitializeComponent();
-            refreshOutputLocation(Screen.AllScreens[1]);
+
+            if (Screen.AllScreens.Count() > 1)
+            {
+                refreshOutputLocation(Screen.AllScreens[1]);
+            }
+            else
+            {
+                MessageBox.Show("The computer doesn't have a second display connected.");
+                refreshOutputLocation(Screen.AllScreens[0]);
+            }
             //if (Properties.Settings.Default.Scenes != null)
             //{
             //    scenesList = loadScenes();
