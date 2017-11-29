@@ -48,7 +48,7 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(4, 17);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(133, 160);
             this.listBox1.TabIndex = 0;
@@ -58,9 +58,9 @@
             // 
             this.groupBox1.Controls.Add(this.listBox1);
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(141, 186);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -69,7 +69,7 @@
             // openButton
             // 
             this.openButton.Location = new System.Drawing.Point(9, 201);
-            this.openButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.openButton.Margin = new System.Windows.Forms.Padding(2);
             this.openButton.Name = "openButton";
             this.openButton.Size = new System.Drawing.Size(141, 22);
             this.openButton.TabIndex = 2;
@@ -88,9 +88,9 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(154, 10);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(252, 213);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
@@ -99,7 +99,7 @@
             // workingAreaTextBox
             // 
             this.workingAreaTextBox.Location = new System.Drawing.Point(7, 143);
-            this.workingAreaTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.workingAreaTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.workingAreaTextBox.Name = "workingAreaTextBox";
             this.workingAreaTextBox.ReadOnly = true;
             this.workingAreaTextBox.Size = new System.Drawing.Size(242, 20);
@@ -108,7 +108,7 @@
             // typeTextBox
             // 
             this.typeTextBox.Location = new System.Drawing.Point(7, 106);
-            this.typeTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.typeTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.typeTextBox.Name = "typeTextBox";
             this.typeTextBox.ReadOnly = true;
             this.typeTextBox.Size = new System.Drawing.Size(242, 20);
@@ -117,7 +117,7 @@
             // boundsTextBox
             // 
             this.boundsTextBox.Location = new System.Drawing.Point(7, 70);
-            this.boundsTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.boundsTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.boundsTextBox.Name = "boundsTextBox";
             this.boundsTextBox.ReadOnly = true;
             this.boundsTextBox.Size = new System.Drawing.Size(242, 20);
@@ -126,7 +126,7 @@
             // nameTextBox
             // 
             this.nameTextBox.Location = new System.Drawing.Point(7, 33);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.ReadOnly = true;
             this.nameTextBox.Size = new System.Drawing.Size(242, 20);
@@ -180,7 +180,8 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.openButton);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ChangeDisplay";
             this.Text = "DisplayForm";
             this.groupBox1.ResumeLayout(false);

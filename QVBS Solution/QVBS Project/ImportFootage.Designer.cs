@@ -54,18 +54,21 @@
             // 
             this.groupBox1.Controls.Add(this.openButton);
             this.groupBox1.Controls.Add(this.clipListBox);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(9, 10);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 413);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(150, 336);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Load Files:";
             // 
             // openButton
             // 
-            this.openButton.Location = new System.Drawing.Point(6, 380);
+            this.openButton.Location = new System.Drawing.Point(4, 309);
+            this.openButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.openButton.Name = "openButton";
-            this.openButton.Size = new System.Drawing.Size(188, 27);
+            this.openButton.Size = new System.Drawing.Size(141, 22);
             this.openButton.TabIndex = 1;
             this.openButton.Text = "Open from File...";
             this.openButton.UseVisualStyleBackColor = true;
@@ -74,19 +77,21 @@
             // clipListBox
             // 
             this.clipListBox.FormattingEnabled = true;
-            this.clipListBox.ItemHeight = 16;
-            this.clipListBox.Location = new System.Drawing.Point(6, 21);
+            this.clipListBox.Location = new System.Drawing.Point(4, 17);
+            this.clipListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.clipListBox.Name = "clipListBox";
-            this.clipListBox.Size = new System.Drawing.Size(188, 340);
+            this.clipListBox.Size = new System.Drawing.Size(142, 277);
             this.clipListBox.TabIndex = 0;
             this.clipListBox.SelectedIndexChanged += new System.EventHandler(this.clipListBox_SelectedIndexChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.axWindowsMediaPlayer1);
-            this.groupBox2.Location = new System.Drawing.Point(218, 12);
+            this.groupBox2.Location = new System.Drawing.Point(164, 10);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(284, 283);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(213, 230);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Preview:";
@@ -95,10 +100,11 @@
             // 
             this.axWindowsMediaPlayer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(3, 18);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(2, 15);
+            this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(278, 262);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(209, 213);
             this.axWindowsMediaPlayer1.TabIndex = 0;
             // 
             // groupBox3
@@ -106,9 +112,11 @@
             this.groupBox3.Controls.Add(this.addLoopButton);
             this.groupBox3.Controls.Add(this.addPlayerButton);
             this.groupBox3.Controls.Add(this.addEventButton);
-            this.groupBox3.Location = new System.Drawing.Point(221, 301);
+            this.groupBox3.Location = new System.Drawing.Point(166, 245);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(276, 118);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Size = new System.Drawing.Size(207, 96);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Add to current scene as...";
@@ -116,9 +124,10 @@
             // addLoopButton
             // 
             this.addLoopButton.Enabled = false;
-            this.addLoopButton.Location = new System.Drawing.Point(182, 21);
+            this.addLoopButton.Location = new System.Drawing.Point(136, 17);
+            this.addLoopButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addLoopButton.Name = "addLoopButton";
-            this.addLoopButton.Size = new System.Drawing.Size(75, 91);
+            this.addLoopButton.Size = new System.Drawing.Size(56, 74);
             this.addLoopButton.TabIndex = 0;
             this.addLoopButton.Text = "Loop";
             this.addLoopButton.UseVisualStyleBackColor = true;
@@ -127,9 +136,10 @@
             // addPlayerButton
             // 
             this.addPlayerButton.Enabled = false;
-            this.addPlayerButton.Location = new System.Drawing.Point(101, 21);
+            this.addPlayerButton.Location = new System.Drawing.Point(76, 17);
+            this.addPlayerButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addPlayerButton.Name = "addPlayerButton";
-            this.addPlayerButton.Size = new System.Drawing.Size(75, 91);
+            this.addPlayerButton.Size = new System.Drawing.Size(56, 74);
             this.addPlayerButton.TabIndex = 0;
             this.addPlayerButton.Text = "Player";
             this.addPlayerButton.UseVisualStyleBackColor = true;
@@ -138,9 +148,10 @@
             // addEventButton
             // 
             this.addEventButton.Enabled = false;
-            this.addEventButton.Location = new System.Drawing.Point(20, 21);
+            this.addEventButton.Location = new System.Drawing.Point(15, 17);
+            this.addEventButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addEventButton.Name = "addEventButton";
-            this.addEventButton.Size = new System.Drawing.Size(75, 91);
+            this.addEventButton.Size = new System.Drawing.Size(56, 74);
             this.addEventButton.TabIndex = 0;
             this.addEventButton.Text = "Event";
             this.addEventButton.UseVisualStyleBackColor = true;
@@ -148,12 +159,14 @@
             // 
             // ImportFootage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 437);
+            this.ClientSize = new System.Drawing.Size(382, 355);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ImportFootage";
             this.Text = "Import Footage";
             this.groupBox1.ResumeLayout(false);

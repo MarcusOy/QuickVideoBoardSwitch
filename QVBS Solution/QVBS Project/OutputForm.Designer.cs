@@ -54,6 +54,7 @@
             this.graphicPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("graphicPlayer.OcxState")));
             this.graphicPlayer.Size = new System.Drawing.Size(403, 393);
             this.graphicPlayer.TabIndex = 1;
+            this.graphicPlayer.Visible = false;
             this.graphicPlayer.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.graphicPlayer_PlayStateChange);
             // 
             // OutputForm
@@ -65,7 +66,7 @@
             this.Controls.Add(this.loopPlayer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "OutputForm";
-            this.Text = "OutputForm";
+            this.Text = "Output";
             ((System.ComponentModel.ISupportInitialize)(this.loopPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.graphicPlayer)).EndInit();
             this.ResumeLayout(false);

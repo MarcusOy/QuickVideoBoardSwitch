@@ -70,18 +70,21 @@ namespace QVBS_Project
         {
             this.mainForm.addToEvents((Clip)clipListBox.Items[clipListBox.SelectedIndex]);
             clipListBox.Items.RemoveAt(clipListBox.SelectedIndex);
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
         }
 
         private void addPlayerButton_Click(object sender, EventArgs e)
         {
             this.mainForm.addToPlayers((Clip)clipListBox.Items[clipListBox.SelectedIndex]);
             clipListBox.Items.RemoveAt(clipListBox.SelectedIndex);
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
         }
 
         private void addLoopButton_Click(object sender, EventArgs e)
         {
             this.mainForm.addToLoops((Clip)clipListBox.Items[clipListBox.SelectedIndex]);
             clipListBox.Items.RemoveAt(clipListBox.SelectedIndex);
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
         }
     }
 }
