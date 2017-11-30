@@ -11,9 +11,9 @@ namespace QVBS_Project
     class Scene
     {
         String name;
-        ListView.ListViewItemCollection eventsList;
-        ListView.ListViewItemCollection playersList;
-        ListView.ListViewItemCollection loopsList;
+        List<Clip> eventsList;
+        List<Clip> playersList;
+        List<Clip> loopsList;
 
         public Scene()
         {
@@ -24,7 +24,7 @@ namespace QVBS_Project
 
         }
 
-        public Scene(String name, ListView.ListViewItemCollection events, ListView.ListViewItemCollection players, ListView.ListViewItemCollection loops)
+        public Scene(String name, List<Clip> events, List<Clip> players, List<Clip> loops)
         {
             this.Name = "New Scene";
             this.EventsList = events;
@@ -46,7 +46,7 @@ namespace QVBS_Project
             }
         }
 
-        public ListView.ListViewItemCollection EventsList
+        public List<Clip> EventsList
         {
             get
             {
@@ -59,7 +59,7 @@ namespace QVBS_Project
             }
         }
 
-        public ListView.ListViewItemCollection PlayersList
+        public List<Clip> PlayersList
         {
             get
             {
@@ -72,7 +72,7 @@ namespace QVBS_Project
             }
         }
 
-        public ListView.ListViewItemCollection LoopsList
+        public List<Clip> LoopsList
         {
             get
             {

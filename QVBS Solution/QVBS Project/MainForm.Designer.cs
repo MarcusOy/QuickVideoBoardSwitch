@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.eventsListView = new System.Windows.Forms.ListView();
             this.nameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.isPlayingColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +43,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renameSceneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.eventsSearchTextBox = new System.Windows.Forms.TextBox();
@@ -54,7 +55,7 @@
             this.playLoopGraphic = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.currentScreenLabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.previewPanel = new System.Windows.Forms.Panel();
             this.stopButton = new System.Windows.Forms.Button();
             this.pauseButton = new System.Windows.Forms.Button();
             this.playButton = new System.Windows.Forms.Button();
@@ -64,11 +65,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.playersListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.loopsListView = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.renameSceneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.capturetimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -79,8 +78,7 @@
             this.eventsListView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.eventsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.nameColumn,
-            this.isPlayingColumn});
+            this.nameColumn});
             this.eventsListView.FullRowSelect = true;
             this.eventsListView.GridLines = true;
             this.eventsListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -96,12 +94,7 @@
             // nameColumn
             // 
             this.nameColumn.Text = "Name";
-            this.nameColumn.Width = 125;
-            // 
-            // isPlayingColumn
-            // 
-            this.isPlayingColumn.Text = "Is Playing?";
-            this.isPlayingColumn.Width = 87;
+            this.nameColumn.Width = 175;
             // 
             // label1
             // 
@@ -148,6 +141,7 @@
             this.newSceneToolStripMenuItem.Name = "newSceneToolStripMenuItem";
             this.newSceneToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.newSceneToolStripMenuItem.Text = "New Scene";
+            this.newSceneToolStripMenuItem.Click += new System.EventHandler(this.newSceneToolStripMenuItem_Click);
             // 
             // openSceneToolStripMenuItem
             // 
@@ -201,11 +195,18 @@
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
             // 
+            // renameSceneToolStripMenuItem
+            // 
+            this.renameSceneToolStripMenuItem.Name = "renameSceneToolStripMenuItem";
+            this.renameSceneToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.renameSceneToolStripMenuItem.Text = "Rename Scene";
+            this.renameSceneToolStripMenuItem.Click += new System.EventHandler(this.renameSceneToolStripMenuItem_Click);
+            // 
             // fadeToolStripMenuItem
             // 
             this.fadeToolStripMenuItem.CheckOnClick = true;
             this.fadeToolStripMenuItem.Name = "fadeToolStripMenuItem";
-            this.fadeToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.fadeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.fadeToolStripMenuItem.Text = "Fade";
             // 
             // label2
@@ -306,7 +307,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.currentScreenLabel);
-            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Controls.Add(this.previewPanel);
             this.groupBox1.Controls.Add(this.stopButton);
             this.groupBox1.Controls.Add(this.pauseButton);
             this.groupBox1.Controls.Add(this.playButton);
@@ -335,15 +336,16 @@
             this.currentScreenLabel.TabIndex = 5;
             this.currentScreenLabel.Text = "Displaying Graphics layers on Display 2";
             // 
-            // panel1
+            // previewPanel
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Location = new System.Drawing.Point(387, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 99);
-            this.panel1.TabIndex = 4;
+            this.previewPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.previewPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.previewPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.previewPanel.Location = new System.Drawing.Point(387, 10);
+            this.previewPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.previewPanel.Name = "previewPanel";
+            this.previewPanel.Size = new System.Drawing.Size(188, 99);
+            this.previewPanel.TabIndex = 4;
             // 
             // stopButton
             // 
@@ -436,8 +438,7 @@
             this.playersListView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.playersListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
+            this.columnHeader1});
             this.playersListView.FullRowSelect = true;
             this.playersListView.GridLines = true;
             this.playersListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -453,12 +454,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Name";
-            this.columnHeader1.Width = 125;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Is Playing?";
-            this.columnHeader2.Width = 87;
+            this.columnHeader1.Width = 175;
             // 
             // loopsListView
             // 
@@ -466,8 +462,7 @@
             this.loopsListView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.loopsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader3});
             this.loopsListView.FullRowSelect = true;
             this.loopsListView.GridLines = true;
             this.loopsListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -483,19 +478,12 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Name";
-            this.columnHeader3.Width = 125;
+            this.columnHeader3.Width = 175;
             // 
-            // columnHeader4
+            // capturetimer
             // 
-            this.columnHeader4.Text = "Is Playing?";
-            this.columnHeader4.Width = 87;
-            // 
-            // renameSceneToolStripMenuItem
-            // 
-            this.renameSceneToolStripMenuItem.Name = "renameSceneToolStripMenuItem";
-            this.renameSceneToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.renameSceneToolStripMenuItem.Text = "Rename Scene";
-            this.renameSceneToolStripMenuItem.Click += new System.EventHandler(this.renameSceneToolStripMenuItem_Click);
+            this.capturetimer.Interval = 50;
+            this.capturetimer.Tick += new System.EventHandler(this.capturetimer_Tick);
             // 
             // MainForm
             // 
@@ -536,7 +524,6 @@
 
         private System.Windows.Forms.ListView eventsListView;
         private System.Windows.Forms.ColumnHeader nameColumn;
-        private System.Windows.Forms.ColumnHeader isPlayingColumn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -562,19 +549,18 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox graphicTextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel previewPanel;
         private System.Windows.Forms.Label currentScreenLabel;
         private System.Windows.Forms.ListView playersListView;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ListView loopsListView;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ToolStripMenuItem switchOutputDisplayToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newSceneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem renameSceneToolStripMenuItem;
+        private System.Windows.Forms.Timer capturetimer;
     }
 }
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace QVBS_Project
 {
+    [Serializable]
     public class Clip
     {
 

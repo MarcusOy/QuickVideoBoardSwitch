@@ -18,6 +18,7 @@ namespace QVBS_Project
             InitializeComponent();
             loopPlayer.uiMode = "none";
             graphicPlayer.uiMode = "none";
+            graphicPlayer.Visible = false;
             loopPlayer.settings.setMode("loop", true);
             this.mainForm = mainForm;
         }
@@ -48,11 +49,14 @@ namespace QVBS_Project
             mainForm.updatePlayLabels(graphic.Name, "");
         }
 
-        private void graphicPlayer_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        private void graphicPlayer_PlayStateChange_1(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
             if (graphicPlayer.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
                 graphicPlayer.Visible = true;
+                graphicPlayer.Size = this.Size;
+                graphicPlayer.Location = this.Location;
+                graphicPlayer.stretchToFit = true;
             }
             else if (graphicPlayer.playState == WMPLib.WMPPlayState.wmppsStopped)
             {

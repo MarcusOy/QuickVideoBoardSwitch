@@ -33,6 +33,7 @@ namespace QVBS_Project
                         Clip clip = new Clip(System.IO.Path.GetFileName(filename), filename);
 
                         clipListBox.Items.Add(clip);
+                        clipListBox.SelectedIndex = 0;
                     }
                 }
                 catch (Exception ex)
@@ -41,7 +42,7 @@ namespace QVBS_Project
                 }
             }
 
-            clipListBox.SelectedIndex = 0;
+
            
         }
 
@@ -69,22 +70,27 @@ namespace QVBS_Project
         private void addEventButton_Click(object sender, EventArgs e)
         {
             this.mainForm.addToEvents((Clip)clipListBox.Items[clipListBox.SelectedIndex]);
-            clipListBox.Items.RemoveAt(clipListBox.SelectedIndex);
-            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            cleanUp();
         }
 
         private void addPlayerButton_Click(object sender, EventArgs e)
         {
             this.mainForm.addToPlayers((Clip)clipListBox.Items[clipListBox.SelectedIndex]);
-            clipListBox.Items.RemoveAt(clipListBox.SelectedIndex);
-            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            cleanUp();
         }
 
         private void addLoopButton_Click(object sender, EventArgs e)
         {
             this.mainForm.addToLoops((Clip)clipListBox.Items[clipListBox.SelectedIndex]);
+            cleanUp();
+        }
+
+        private void cleanUp()
+        {
             clipListBox.Items.RemoveAt(clipListBox.SelectedIndex);
             axWindowsMediaPlayer1.Ctlcontrols.stop();
+            if (clipListBox.Items.Count > 0)
+                clipListBox.SelectedIndex = 0;
         }
     }
 }
