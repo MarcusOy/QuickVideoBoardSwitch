@@ -62,46 +62,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clip.cs" />
-    <Compile Include="ChangeDisplay.cs">
+    <Compile Include="Forms\WatermarkTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\WatermarkTextBox.Designer.cs">
+      <DependentUpon>WatermarkTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\Clip.cs" />
+    <Compile Include="Forms\ChangeDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangeDisplay.Designer.cs">
+    <Compile Include="Forms\ChangeDisplay.Designer.cs">
       <DependentUpon>ChangeDisplay.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImportFootage.cs">
+    <Compile Include="Forms\ImportFootage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImportFootage.Designer.cs">
+    <Compile Include="Forms\ImportFootage.Designer.cs">
       <DependentUpon>ImportFootage.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OutputForm.cs">
+    <Compile Include="Forms\OpenScene.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OutputForm.Designer.cs">
+    <Compile Include="Forms\OpenScene.Designer.cs">
+      <DependentUpon>OpenScene.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OutputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OutputForm.Designer.cs">
       <DependentUpon>OutputForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scene.cs" />
-    <Compile Include="ScreenDetails.cs" />
+    <Compile Include="Misc\Scene.cs" />
+    <Compile Include="Misc\ScreenDetails.cs" />
     <Compile Include="Settings.cs" />
-    <EmbeddedResource Include="ChangeDisplay.resx">
+    <EmbeddedResource Include="Forms\ChangeDisplay.resx">
       <DependentUpon>ChangeDisplay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImportFootage.resx">
+    <EmbeddedResource Include="Forms\ImportFootage.resx">
       <DependentUpon>ImportFootage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OutputForm.resx">
+    <EmbeddedResource Include="Forms\OpenScene.resx">
+      <DependentUpon>OpenScene.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OutputForm.resx">
       <DependentUpon>OutputForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

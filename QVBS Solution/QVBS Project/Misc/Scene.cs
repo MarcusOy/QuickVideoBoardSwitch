@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace QVBS_Project
 {
     [Serializable]
-    class Scene
+    public class Scene
     {
         String name;
         List<Clip> eventsList;
@@ -26,7 +26,7 @@ namespace QVBS_Project
 
         public Scene(String name, List<Clip> events, List<Clip> players, List<Clip> loops)
         {
-            this.Name = "New Scene";
+            this.Name = name;
             this.EventsList = events;
             this.PlayersList = players;
             this.LoopsList = loops;
@@ -83,6 +83,11 @@ namespace QVBS_Project
             {
                 loopsList = value;
             }
+        }
+
+        public override string ToString()
+        {
+            return this.name;
         }
     }
 }

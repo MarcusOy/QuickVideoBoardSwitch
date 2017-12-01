@@ -19,8 +19,8 @@ namespace QVBS_Project
         // Fields
         Screen currentScreen;
         OutputForm outputForm;
-        Scene currentScene;
-        List<Scene> scenesList;
+        public List<Scene> scenesList;
+
         // Initializes form
         public MainForm()
         {
@@ -37,7 +37,11 @@ namespace QVBS_Project
             }
             if (Properties.Settings.Default.Scenes != "")
             {
-                scenesList = loadScenes();
+                this.scenesList = loadScenes();
+            }
+            else
+            {
+                this.scenesList = new List<Scene>();
             }
 
             if (Properties.Settings.Default.LastScene != "")
@@ -267,7 +271,7 @@ namespace QVBS_Project
             return new Scene(temp[0].Trim(), eventsList, playersList, loopsList);
         }
         // Loads data from scene object
-        private void loadFromScene(Scene scene)
+        public void loadFromScene(Scene scene)
         {
             this.Text = scene.Name + " - QuickVideoBoardSwitch";
 
@@ -329,6 +333,64 @@ namespace QVBS_Project
             this.playersListView.Items.Clear();
             this.loopsListView.Items.Clear();
 
+        }
+        // Event to handle the delete function of the events list view
+        private void eventsListView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Keys.Delete == e.KeyCode)
+            {
+                foreach (ListViewItem listViewItem in ((ListView)sender).SelectedItems)
+                {
+                    DialogResult result = MessageBox.Show("Are you sure you want to remove this item?", "Remove Item", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        listViewItem.Remove();
+                    }
+                }
+
+            }
+        }
+        // Event to handle the delete function of the players list view
+        private void playersListView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Keys.Delete == e.KeyCode)
+            {
+                foreach (ListViewItem listViewItem in ((ListView)sender).SelectedItems)
+                {
+                    DialogResult result = MessageBox.Show("Are you sure you want to remove this item?", "Remove Item", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        listViewItem.Remove();
+                    }
+                }
+
+            }
+        }
+        // Event to handle the delete function of the loops list view
+        private void loopsListView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Keys.Delete == e.KeyCode)
+            {
+                foreach (ListViewItem listViewItem in ((ListView)sender).SelectedItems)
+                {
+                    DialogResult result = MessageBox.Show("Are you sure you want to remove this item?", "Remove Item", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        listViewItem.Remove();
+                    }
+                }
+
+            }
+        }
+        // Opens the form to load different scenes
+        private void openSceneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form newForm = new OpenScene(this);
+            newForm.Show();
+        }
+        private void saveSceneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.scenesList.Add(saveIntoScene());
         }
     }
 

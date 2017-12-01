@@ -90,6 +90,7 @@
             this.eventsListView.TabIndex = 0;
             this.eventsListView.UseCompatibleStateImageBehavior = false;
             this.eventsListView.View = System.Windows.Forms.View.Details;
+            this.eventsListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eventsListView_KeyDown);
             // 
             // nameColumn
             // 
@@ -148,12 +149,14 @@
             this.openSceneToolStripMenuItem.Name = "openSceneToolStripMenuItem";
             this.openSceneToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.openSceneToolStripMenuItem.Text = "Open Scene";
+            this.openSceneToolStripMenuItem.Click += new System.EventHandler(this.openSceneToolStripMenuItem_Click);
             // 
             // saveSceneToolStripMenuItem
             // 
             this.saveSceneToolStripMenuItem.Name = "saveSceneToolStripMenuItem";
             this.saveSceneToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.saveSceneToolStripMenuItem.Text = "Save Scene";
+            this.saveSceneToolStripMenuItem.Click += new System.EventHandler(this.saveSceneToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -450,6 +453,7 @@
             this.playersListView.TabIndex = 0;
             this.playersListView.UseCompatibleStateImageBehavior = false;
             this.playersListView.View = System.Windows.Forms.View.Details;
+            this.playersListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.playersListView_KeyDown);
             // 
             // columnHeader1
             // 
@@ -474,6 +478,7 @@
             this.loopsListView.TabIndex = 0;
             this.loopsListView.UseCompatibleStateImageBehavior = false;
             this.loopsListView.View = System.Windows.Forms.View.Details;
+            this.loopsListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.loopsListView_KeyDown);
             // 
             // columnHeader3
             // 
